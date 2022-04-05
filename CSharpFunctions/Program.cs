@@ -16,6 +16,7 @@ Stampare la somma di tutti i numeri elevati al quadrati */
 
 //------------------- PROGRAMMA PRINCIPALE ------------------- 
 
+
 //Dichiarazione dell'array
 int[] ArrayNumerico = { 2, 6, 7, 5, 3, 9 };
 
@@ -24,8 +25,10 @@ Console.WriteLine("Ecco il contenuto del nostro array: ");
 StampaArray(ArrayNumerico);
 
 //Stampa dell'array al quadrato
-Console.WriteLine("Ecco il nostro array al quadrato");
-ElevaArrayAlQuadrato(ArrayNumerico);
+int[] Numalquadrato = ElevaArrayAlQuadrato(ArrayNumerico);
+Console.WriteLine("Ecco il nostro array al quadrato: ");
+StampaArray(Numalquadrato);
+
 
 //Verifica che l'array iniziale non sia stato modificato
 Console.WriteLine("Verifichiamo che il nostro array iniziale non sia cambiato: ");
@@ -35,12 +38,13 @@ StampaArray(ArrayNumerico);
 int Sum = sommaElementiArray(ArrayNumerico);
 Console.WriteLine("Ecco la somma dei valori del nostro array: " + Sum);
 
+//Somma degli elementi al quadrato
 int elevatoAlQuadrato = Quadrato(Sum);
 Console.WriteLine("Ecco anche la somma degli elementi dell'array al quadrato: " + elevatoAlQuadrato);
 
-
-
-
+//Somma di ogni elemento che è stato elevato al quadrato
+int SumElementiAlQuadrato = sommaElementiArray(Numalquadrato);
+Console.WriteLine("Ecco anche la Somma di ogni elemento che è stato elevato al quadrato: " + SumElementiAlQuadrato);
 
 
 //---------------- FINE PROGRAMMA PRINCIPALE -----------------
@@ -51,7 +55,7 @@ Console.WriteLine("Ecco anche la somma degli elementi dell'array al quadrato: " 
 
 //------------------- FUNZIONI -------------------
 
-// Stampa il contenuto di un Array
+//Stampa il contenuto di un Array
 void StampaArray(int[] array)
 {
     int ultimoIndiceArray = array.Length - 1;
@@ -70,7 +74,7 @@ void StampaArray(int[] array)
     Console.WriteLine("]");
 }
 
-// Ritorna il quadrato di un numero
+//Ritorna il quadrato di un numero
 int Quadrato(int numero)
 {   
     int quadrato = 0;
@@ -79,25 +83,25 @@ int Quadrato(int numero)
     return quadrato;
 }
 
-// Ritorna l'elevazione al quadrato di un array
-int[] ElevaArrayAlQuadrato(int[] array)
+//Ritorna l'elevazione al quadrato di un array
+int[] ElevaArrayAlQuadrato(int[] arrey)
 {
-    int[] quadrato = (int[])array.Clone();
+    int[] quadrato = (int[])arrey.Clone();
     for (int i = 0; i < quadrato.Length; i++)
     {
-        quadrato[i] = array[i] * array[i];
+        quadrato[i] = arrey[i] * arrey[i];
     }
 
     return quadrato;
 }
 
-// Ritorna la somma degli elementi di un array
-int sommaElementiArray(int[] array)
+//Ritorna la somma degli elementi di un array
+int sommaElementiArray(int[] arrey)
 {
     int somma = 0;
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arrey.Length; i++)
     {
-        somma = somma + array[i]; 
+        somma = somma + arrey[i]; 
     }
 
         return somma;

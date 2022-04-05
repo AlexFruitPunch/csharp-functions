@@ -9,25 +9,25 @@ dopo di che questi vengono inseriti a mano dall’utente esternamente. Rieseguir
 //Dichiarazione dell'array e la sua lunghezza
 Console.WriteLine("inserisci quanti numeri vuoi inserire: ");
 int n = int.Parse(Console.ReadLine());
-int[] ArrayNumerico = {n};
-CaricaArray(ArrayNumerico, n);
+int[] arrayNumerico = new int[n];
+CaricaArray(arrayNumerico, n);
 
 //Stampiamo l'intero array
 Console.WriteLine("Ecco il contenuto del nostro array: ");
-StampaArray(ArrayNumerico,n);
+StampaArray(arrayNumerico,n);
 
 //Stampa dell'array al quadrato 
-int[] Numalquadrato = ElevaArrayAlQuadrato(ArrayNumerico,n);
+int[] Numalquadrato = ElevaArrayAlQuadrato(arrayNumerico,n);
 Console.WriteLine("Ecco il nostro array al quadrato: ");
 StampaArray(Numalquadrato,n);
 
 
 //Verifica che l'array iniziale non sia stato modificato
 Console.WriteLine("Verifichiamo che il nostro array iniziale non sia cambiato: ");
-StampaArray(ArrayNumerico,n);
+StampaArray(arrayNumerico,n);
 
 //Somma degli elementi del nostro array
-int Sum = sommaElementiArray(ArrayNumerico,n);
+int Sum = sommaElementiArray(arrayNumerico,n);
 Console.WriteLine("Ecco la somma dei valori del nostro array: " + Sum);
 
 //Somma degli elementi al quadrato
@@ -48,16 +48,17 @@ Console.WriteLine("Ecco anche la Somma di ogni elemento che è stato elevato al 
 //------------------- FUNZIONI -------------------
 
 //Stampa il contenuto di un Array
-void CaricaArray(int[] Array, int lunghezzaArray)
+void CaricaArray(int[] array, int lunghezzaArray)
 {
     for (int i = 0; i < lunghezzaArray; i++)
     {
         Console.WriteLine("Inserisci un numero: ");
-        Array[i] = int.Parse(Console.ReadLine());
+        int numero = int.Parse(Console.ReadLine());
+        array[i] = numero;
     }
 }
 
-void StampaArray(int[] Array, int lunghezzaArray)
+void StampaArray(int[] array, int lunghezzaArray)
 {
     int ultimoIndiceArray = lunghezzaArray - 1;
     Console.Write("[");
@@ -65,11 +66,11 @@ void StampaArray(int[] Array, int lunghezzaArray)
     {
         if (i == ultimoIndiceArray)
         {
-            Console.Write(Array[i]);
+            Console.Write(array[i]);
         }
         else
         {
-            Console.Write(Array[i] + ", ");
+            Console.Write(array[i] + ", ");
         }
     }
     Console.WriteLine("]");
@@ -85,24 +86,24 @@ int Quadrato(int numero)
 }
 
 //Ritorna l'elevazione al quadrato di un array
-int[] ElevaArrayAlQuadrato(int[] Array, int lunghezzaArray)
+int[] ElevaArrayAlQuadrato(int[] array, int lunghezzaArray)
 {
-    int[] quadrato = (int[])Array.Clone();
+    int[] quadrato = (int[])array.Clone();
     for (int i = 0; i < lunghezzaArray; i++)
     {
-        quadrato[i] = Array[i] * Array[i];
+        quadrato[i] = array[i] * array[i];
     }
 
     return quadrato;
 }
 
 //Ritorna la somma degli elementi di un array
-int sommaElementiArray(int[] Array, int lunghezzaArray)
+int sommaElementiArray(int[] array, int lunghezzaArray)
 {
     int somma = 0;
     for (int i = 0; i < lunghezzaArray; i++)
     {
-        somma = somma + Array[i];
+        somma = somma + array[i];
     }
 
     return somma;

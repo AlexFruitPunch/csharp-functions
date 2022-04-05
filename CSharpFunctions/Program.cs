@@ -16,7 +16,32 @@ Stampare la somma di tutti i numeri elevati al quadrati */
 
 //------------------- PROGRAMMA PRINCIPALE ------------------- 
 
-int ArrayNumerico
+//Dichiarazione dell'array
+int[] ArrayNumerico = { 2, 6, 7, 5, 3, 9 };
+
+//Stampiamo l'intero array
+Console.WriteLine("Ecco il contenuto del nostro array: ");
+StampaArray(ArrayNumerico);
+
+//Stampa dell'array al quadrato
+Console.WriteLine("Ecco il nostro array al quadrato");
+ElevaArrayAlQuadrato(ArrayNumerico);
+
+//Verifica che l'array iniziale non sia stato modificato
+Console.WriteLine("Verifichiamo che il nostro array iniziale non sia cambiato: ");
+StampaArray(ArrayNumerico);
+
+//Somma degli elementi del nostro array
+int Sum = sommaElementiArray(ArrayNumerico);
+Console.WriteLine("Ecco la somma dei valori del nostro array: " + Sum);
+
+int elevatoAlQuadrato = Quadrato(Sum);
+Console.WriteLine("Ecco anche la somma degli elementi dell'array al quadrato: " + elevatoAlQuadrato);
+
+
+
+
+
 
 //---------------- FINE PROGRAMMA PRINCIPALE -----------------
 

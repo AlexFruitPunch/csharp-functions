@@ -6,11 +6,10 @@ dopo di che questi vengono inseriti a mano dall’utente esternamente. Rieseguir
 //------------------- PROGRAMMA PRINCIPALE ------------------- 
 
 
-//Dichiarazione dell'array
-
+//Dichiarazione dell'array e la sua lunghezza
 Console.WriteLine("inserisci quanti numeri vuoi inserire: ");
 int n = int.Parse(Console.ReadLine());
-int[] ArrayNumerico = { n };
+int[] ArrayNumerico = {n};
 CaricaArray(ArrayNumerico, n);
 
 //Stampiamo l'intero array

@@ -84,24 +84,24 @@ int Quadrato(int numero)
 }
 
 //Ritorna l'elevazione al quadrato di un array
-int[] ElevaArrayAlQuadrato(int[] arrey)
+int[] ElevaArrayAlQuadrato(int[] array)
 {
-    int[] quadrato = (int[])arrey.Clone();
+    int[] quadrato = (int[])array.Clone();
     for (int i = 0; i < quadrato.Length; i++)
     {
-        quadrato[i] = arrey[i] * arrey[i];
+        quadrato[i] = array[i] * array[i];
     }
 
     return quadrato;
 }
 
 //Ritorna la somma degli elementi di un array
-int sommaElementiArray(int[] arrey)
+int sommaElementiArray(int[] array)
 {
     int somma = 0;
-    for (int i = 0; i < arrey.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        somma = somma + arrey[i]; 
+        somma = somma + array[i]; 
     }
 
         return somma;

@@ -47,7 +47,7 @@ Console.WriteLine("Ecco anche la Somma di ogni elemento che è stato elevato al 
 
 //------------------- FUNZIONI -------------------
 
-//Stampa il contenuto di un Array
+//Carica un array data una lunghezza scelta dall'utente
 void CaricaArray(int[] array, int lunghezzaArray)
 {
     for (int i = 0; i < lunghezzaArray; i++)
@@ -58,6 +58,7 @@ void CaricaArray(int[] array, int lunghezzaArray)
     }
 }
 
+//Stampa il contenuto di un Array
 void StampaArray(int[] array, int lunghezzaArray)
 {
     int ultimoIndiceArray = lunghezzaArray - 1;
